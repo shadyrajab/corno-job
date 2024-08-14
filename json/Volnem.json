@@ -1,0 +1,271 @@
+{
+    "name": "Volnem",
+    "external_id": "09825630",
+    "player_user_id": 5439,
+    "trips": [
+        {
+            "Matricula": "09825630",
+            "NumViagem": "2600128942",
+            "Cpf": "",
+            "Fornecedor": "",
+            "NomeViajante": "Volnem da Paix\u00e3o Santos",
+            "Destino": "S\u00e3o Paulo-BR",
+            "Periodo": "13.08.2024 At\u00e9 16.08.2024",
+            "Motivo": "",
+            "AdiantamentoBRL": "868,00",
+            "AdiantamentoEST": "",
+            "AdiantamentoUSD": "",
+            "MoedaAlternativa": "",
+            "ObjetoCusto": "SR24ADTB03",
+            "Status": "2",
+            "SaudeViajante": "N",
+            "DataInicio": "/Date(1723507200000)/",
+            "AtestadoSaudeOcupacional": "N",
+            "AtestadoSaudeBucal": "N",
+            "NecessitaPreViagem": "N",
+            "Divulgacao": "S",
+            "Acao": "",
+            "PrecoTotalPassagem": "1298.15",
+            "MoedaPrecoTotal": "BRL",
+            "TarifaMenorPreco": "1298.15",
+            "MoedaTarifaMenorPreco": "BRL",
+            "DiferencaPreco": "0.00",
+            "MoedaDiferencaPreco": "",
+            "DataLimiteEmissaoBilhete": null,
+            "InfoPassagem": "HCJUSH",
+            "RegistroReserva": "1553102687",
+            "MotivoViagem": "",
+            "ExpiracaoPNR": "",
+            "PossuiExcecao": false,
+            "Hoteis": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Hoteis"
+                }
+            },
+            "Adiantamentos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Adiantamentos"
+                }
+            },
+            "CustosViagem": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/CustosViagem"
+                }
+            },
+            "Voos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Voos"
+                }
+            },
+            "Excecoes": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Excecoes"
+                }
+            },
+            "OutrosDestinos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/OutrosDestinos"
+                }
+            },
+            "Anexos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Anexos"
+                }
+            }
+        }
+    ],
+    "hoteis": [
+        [
+            {
+                "Identificador": 1,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Nome": "Mercure Sao Paulo Paulista",
+                "Cidade": "S\u00e3o Paulo",
+                "DataChegada": "/Date(1723518000000)/",
+                "DataSaida": "/Date(1723777200000)/",
+                "TarifaPernoite": "1036.35",
+                "PrecoTotal": "1036.35",
+                "Moeda": "BRL",
+                "Email": "h5176-re@accor.com.br",
+                "SituacaoReserva": "Aberta",
+                "TarifaMaisBarata": "1036.35",
+                "DiferencaTarifa": "0.00",
+                "Justificativa": "",
+                "Endereco": "R.S\u00c3O CARLOS DO PINHAL 87",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Hoteis(Identificador=1,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='',Nome='Mercure%20Sao%20Paulo%20Paulista',Cidade='S%C3%A3o%20Paulo')/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "adiantamentos": [
+        [
+            {
+                "Identificador": 1,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "574.00",
+                "Moeda": "BRL",
+                "Tipo": "DITT",
+                "Descricao": "Di\u00e1ria de viagem no pa\u00eds",
+                "MontanteMaximo": "574.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=1,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 2,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "294.00",
+                "Moeda": "BRL",
+                "Tipo": "PERD",
+                "Descricao": "Percurso no pa\u00eds",
+                "MontanteMaximo": "294.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=2,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 3,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "868.00",
+                "Moeda": "BRL",
+                "Tipo": "totalbrl",
+                "Descricao": "Total",
+                "MontanteMaximo": "868.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=3,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 4,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "0.00",
+                "Moeda": "USD",
+                "Tipo": "totalusd",
+                "Descricao": "Total",
+                "MontanteMaximo": "0.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=4,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "custos_viagem": [
+        [
+            {
+                "Identificador": 1,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "3202.50",
+                "Moeda": "BRL",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/CustosViagem(Identificador=1,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='',Valor=3202.50m)/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "voos": [
+        [
+            {
+                "Identificador": 2,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "EmpresaAerea": "G3",
+                "NumVoo": "1503",
+                "EmpresaAereaOferente": "GOL",
+                "OrigemData": "/Date(1723507200000)/",
+                "OrigemHora": "PT12H15M00S",
+                "OrigemCidade": "Aracaj\u00fa",
+                "OrigemCidadeAeroporto": "AJU",
+                "OrigemNomeAeroporto": "Aracaju",
+                "OrigemRegiao": "SE",
+                "OrigemPais": "Brasil",
+                "DestinoData": "/Date(1723507200000)/",
+                "DestinoHora": "PT15H05M00S",
+                "DestinoCidade": "S\u00e3o Paulo",
+                "DestinoCidadeAeroporto": "GRU",
+                "DestinoNomeAeroporto": "Guarulhos Intl",
+                "DestinoRegiao": "SP",
+                "DestinoPais": "Brasil",
+                "Situacao": "FRS Gerada",
+                "CodReserva": "",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Voos(Identificador=2,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='',EmpresaAerea='G3',NumVoo='1503')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 3,
+                "Matricula": "09825630",
+                "NumViagem": "2600128942",
+                "Cpf": "",
+                "Fornecedor": "",
+                "EmpresaAerea": "G3",
+                "NumVoo": "1504",
+                "EmpresaAereaOferente": "GOL",
+                "OrigemData": "/Date(1723766400000)/",
+                "OrigemHora": "PT13H50M00S",
+                "OrigemCidade": "S\u00e3o Paulo",
+                "OrigemCidadeAeroporto": "GRU",
+                "OrigemNomeAeroporto": "Guarulhos Intl",
+                "OrigemRegiao": "SP",
+                "OrigemPais": "Brasil",
+                "DestinoData": "/Date(1723766400000)/",
+                "DestinoHora": "PT16H25M00S",
+                "DestinoCidade": "Aracaj\u00fa",
+                "DestinoCidadeAeroporto": "AJU",
+                "DestinoNomeAeroporto": "Aracaju",
+                "DestinoRegiao": "SE",
+                "DestinoPais": "Brasil",
+                "Situacao": "FRS Gerada",
+                "CodReserva": "",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Voos(Identificador=3,Matricula='09825630',NumViagem='2600128942',Cpf='',Fornecedor='',EmpresaAerea='G3',NumVoo='1504')/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "excecoes": [
+        []
+    ],
+    "outros_destinos": [
+        []
+    ],
+    "anexos": [
+        []
+    ]
+}

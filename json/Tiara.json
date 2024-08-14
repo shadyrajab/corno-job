@@ -1,0 +1,327 @@
+{
+    "name": "Tiara",
+    "external_id": "02562563",
+    "player_user_id": 5424,
+    "trips": [
+        {
+            "Matricula": "02562563",
+            "NumViagem": "1902503311",
+            "Cpf": "",
+            "Fornecedor": "",
+            "NomeViajante": "Tiara Andrade Oliveira Bicalho",
+            "Destino": "Florian\u00f3polis-BR",
+            "Periodo": "13.08.2024 At\u00e9 16.08.2024",
+            "Motivo": "Projeto MOVE (13 e 14/08) / St",
+            "AdiantamentoBRL": "794,50",
+            "AdiantamentoEST": "",
+            "AdiantamentoUSD": "",
+            "MoedaAlternativa": "",
+            "ObjetoCusto": "SCA0ADMB74",
+            "Status": "2",
+            "SaudeViajante": "N",
+            "DataInicio": "/Date(1723507200000)/",
+            "AtestadoSaudeOcupacional": "N",
+            "AtestadoSaudeBucal": "N",
+            "NecessitaPreViagem": "N",
+            "Divulgacao": "S",
+            "Acao": "",
+            "PrecoTotalPassagem": "0.00",
+            "MoedaPrecoTotal": "",
+            "TarifaMenorPreco": "0.00",
+            "MoedaTarifaMenorPreco": "",
+            "DiferencaPreco": "0.00",
+            "MoedaDiferencaPreco": "",
+            "DataLimiteEmissaoBilhete": null,
+            "InfoPassagem": "",
+            "RegistroReserva": "",
+            "MotivoViagem": "",
+            "ExpiracaoPNR": "",
+            "PossuiExcecao": false,
+            "Hoteis": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Hoteis"
+                }
+            },
+            "Adiantamentos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Adiantamentos"
+                }
+            },
+            "CustosViagem": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/CustosViagem"
+                }
+            },
+            "Voos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Voos"
+                }
+            },
+            "Excecoes": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Excecoes"
+                }
+            },
+            "OutrosDestinos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/OutrosDestinos"
+                }
+            },
+            "Anexos": {
+                "__deferred": {
+                    "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Viagens(Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Anexos"
+                }
+            }
+        }
+    ],
+    "hoteis": [
+        [
+            {
+                "Identificador": 1,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Nome": "MERCURE SAO PAULO PAULISTA",
+                "Cidade": "S\u00e3o Paulo",
+                "DataChegada": "/Date(1723518000000)/",
+                "DataSaida": "/Date(1723604400000)/",
+                "TarifaPernoite": "0.00",
+                "PrecoTotal": "345.45",
+                "Moeda": "BRL",
+                "Email": "",
+                "SituacaoReserva": "Reservada",
+                "TarifaMaisBarata": "0.00",
+                "DiferencaTarifa": "0.00",
+                "Justificativa": "",
+                "Endereco": "R.S\u00c3O CARLOS DO PINHAL 87",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Hoteis(Identificador=1,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='',Nome='MERCURE%20SAO%20PAULO%20PAULISTA',Cidade='S%C3%A3o%20Paulo')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 2,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Nome": "HOTEL FICTICIO FLORIANOPOLIS",
+                "Cidade": "Florian\u00f3polis",
+                "DataChegada": "/Date(1723604400000)/",
+                "DataSaida": "/Date(1723777200000)/",
+                "TarifaPernoite": "0.00",
+                "PrecoTotal": "0.02",
+                "Moeda": "BRL",
+                "Email": "",
+                "SituacaoReserva": "Reservada",
+                "TarifaMaisBarata": "0.00",
+                "DiferencaTarifa": "0.00",
+                "Justificativa": "",
+                "Endereco": "* ANTES DE UTILIZAR, LIGAR PARA A AG\u00caNCIA DE VIAGENS *",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Hoteis(Identificador=2,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='',Nome='HOTEL%20FICTICIO%20FLORIANOPOLIS',Cidade='Florian%C3%B3polis')/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "adiantamentos": [
+        [
+            {
+                "Identificador": 1,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "512.50",
+                "Moeda": "BRL",
+                "Tipo": "DITT",
+                "Descricao": "Di\u00e1ria de viagem no pa\u00eds",
+                "MontanteMaximo": "574.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=1,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 2,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "282.00",
+                "Moeda": "BRL",
+                "Tipo": "PERD",
+                "Descricao": "Percurso no pa\u00eds",
+                "MontanteMaximo": "282.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=2,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 3,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "794.50",
+                "Moeda": "BRL",
+                "Tipo": "totalbrl",
+                "Descricao": "Total",
+                "MontanteMaximo": "856.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=3,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 4,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "0.00",
+                "Moeda": "USD",
+                "Tipo": "totalusd",
+                "Descricao": "Total",
+                "MontanteMaximo": "0.00",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Adiantamentos(Identificador=4,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='')/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "custos_viagem": [
+        [
+            {
+                "Identificador": 1,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "Valor": "1139.97",
+                "Moeda": "BRL",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/CustosViagem(Identificador=1,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='',Valor=1139.97m)/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "voos": [
+        [
+            {
+                "Identificador": 2,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "EmpresaAerea": "G3",
+                "NumVoo": "1011",
+                "EmpresaAereaOferente": "GOL",
+                "OrigemData": "/Date(1723507200000)/",
+                "OrigemHora": "PT08H55M00S",
+                "OrigemCidade": "Rio de Janeiro",
+                "OrigemCidadeAeroporto": "SDU",
+                "OrigemNomeAeroporto": "Santos Dumont",
+                "OrigemRegiao": "RJ",
+                "OrigemPais": "Brasil",
+                "DestinoData": null,
+                "DestinoHora": "PT00H00M00S",
+                "DestinoCidade": "S\u00e3o Paulo",
+                "DestinoCidadeAeroporto": "CGH",
+                "DestinoNomeAeroporto": "Congonhas",
+                "DestinoRegiao": "SP",
+                "DestinoPais": "Brasil",
+                "Situacao": "Reserva c/Bilhete",
+                "CodReserva": "4XJW2I",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Voos(Identificador=2,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='',EmpresaAerea='G3',NumVoo='1011')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 3,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "EmpresaAerea": "G3",
+                "NumVoo": "1244",
+                "EmpresaAereaOferente": "GOL",
+                "OrigemData": "/Date(1723593600000)/",
+                "OrigemHora": "PT19H10M00S",
+                "OrigemCidade": "S\u00e3o Paulo",
+                "OrigemCidadeAeroporto": "CGH",
+                "OrigemNomeAeroporto": "Congonhas",
+                "OrigemRegiao": "SP",
+                "OrigemPais": "Brasil",
+                "DestinoData": null,
+                "DestinoHora": "PT00H00M00S",
+                "DestinoCidade": "Florian\u00f3polis",
+                "DestinoCidadeAeroporto": "FLN",
+                "DestinoNomeAeroporto": "Hercilio L",
+                "DestinoRegiao": "SC",
+                "DestinoPais": "Brasil",
+                "Situacao": "Reserva c/Bilhete",
+                "CodReserva": "4XJW2I",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Voos(Identificador=3,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='',EmpresaAerea='G3',NumVoo='1244')/Viagem"
+                    }
+                }
+            },
+            {
+                "Identificador": 4,
+                "Matricula": "02562563",
+                "NumViagem": "1902503311",
+                "Cpf": "",
+                "Fornecedor": "",
+                "EmpresaAerea": "G3",
+                "NumVoo": "2073",
+                "EmpresaAereaOferente": "GOL",
+                "OrigemData": "/Date(1723766400000)/",
+                "OrigemHora": "PT18H40M00S",
+                "OrigemCidade": "Florian\u00f3polis",
+                "OrigemCidadeAeroporto": "FLN",
+                "OrigemNomeAeroporto": "Hercilio L",
+                "OrigemRegiao": "SC",
+                "OrigemPais": "Brasil",
+                "DestinoData": null,
+                "DestinoHora": "PT00H00M00S",
+                "DestinoCidade": "Rio de Janeiro",
+                "DestinoCidadeAeroporto": "GIG",
+                "DestinoNomeAeroporto": "Tom Jobim Intl",
+                "DestinoRegiao": "RJ",
+                "DestinoPais": "Brasil",
+                "Situacao": "Reserva c/Bilhete",
+                "CodReserva": "4XJW2I",
+                "Viagem": {
+                    "__deferred": {
+                        "uri": "https://s4web.petrobras.com.br:443/sap/opu/odata/sap/YSTV_APV_ROT_VIAG_SRV/Voos(Identificador=4,Matricula='02562563',NumViagem='1902503311',Cpf='',Fornecedor='',EmpresaAerea='G3',NumVoo='2073')/Viagem"
+                    }
+                }
+            }
+        ]
+    ],
+    "excecoes": [
+        []
+    ],
+    "outros_destinos": [
+        []
+    ],
+    "anexos": [
+        []
+    ]
+}
