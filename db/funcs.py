@@ -14,7 +14,6 @@ def get_check_external_id(num_viagem):
     cursor = CONNECTION.cursor()
     cursor.execute("SELECT external_id FROM trip WHERE external_id = %s", (num_viagem,))
     result = cursor.fetchone()
-
     if result:
         return True
 
@@ -28,7 +27,7 @@ def insert_hotel(hotel):
             INSERT INTO hotels (
                        id, 
                        address_id, 
-                       name, 
+                       name
                        )
             VALUES (default, %s, %s)
             RETURNING id
