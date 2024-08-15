@@ -34,12 +34,11 @@ for name, external_id in USERS.items():
 
         for flight_trip in trip['voos']:
             flight_trip['trip_id'] = trip_id
-            flight_trip_id = insert_flight_trip(flight_trip)
+            flights_trip_id = insert_flight_trip(flight_trip)
 
-            print('Flight Trip ID:', flight_trip_id)
+            print('Flight Trip ID:', flights_trip_id)
 
-            flights = flight_trip['flight']
-            for flight in flights:
-                flight['flight_trip_id'] = flight_trip_id
-                flight_id = insert_flight(flight)
-                print('Flight ID:', flight_id)
+            flight = flight_trip['flight']
+            flight['flights_trip_id'] = flights_trip_id
+            flight_id = insert_flight(flight)
+            print('Flight ID:', flight_id)

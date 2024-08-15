@@ -6,31 +6,96 @@ def get_player_users_ids(external_id, player_company_id):
     return cursor.fetchone()[0]
 
 
-def insert_flight(flight):
-    print(flight)
-    # cursor = None
-    # try:
-    #     cursor = CONNECTION.cursor()
-    #     cursor.execute("""
-    #         INSERT INTO flights (id, departure_airport_address_id, arrived_airport_address_id, departure_airport_name, departure_airport_code)
-    #         VALUES (default, %s, %s, %s, %s)
-    #         RETURNING id
-    #         """,
-    #     (
-    #         flight['departure_airport_address_id'],
-    #         flight['arrived_airport_address_id'],
-    #         flight['departure_airport_name'],
-    #         flight['departure_airport_code'],
+# "flight": {
+#             "departure_airport_address_id": "",
+#             "arrived_airport_address_id": "",
+#             "departure_airport_name": "Congonhas",
+#             "departure_airport_code": "CGH",
+#             "departure_at": "2024-08-16 00:00:00",
+#             "arrived_airport_name": "Guararapes Intl",
+#             "arrived_airport_code": "REC",
+#             "arrived_at": "2024-08-16 00:00:00",
+#             "trip_eta": "",
+#             "external_id": "09823125",
+#             "status": "FRS Gerada",
+#             "airline_code": "AD",
+#             "airline_display_name": "Azul Linhas A\u00e9reas Brasileiras",
+#             "sequence_flight": "",
+#             "flight_trips_id": "",
+#             "flight_number": "4243",
+#             "booking_number": "",
+#             "airline_id": ""
+#           }
 
-    pass
+def insert_flight(flight):
+    cursor = None
+    try:
+        cursor = CONNECTION.cursor()
+        cursor.execute("""
+            INSERT INTO flights (
+                       id, 
+                       departure_airport_address_id, 
+                       arrived_airport_address_id, 
+                       departure_airport_name, 
+                       departure_airport_code,
+                       departure_at, 
+                       arrived_airport_name,
+                       arrived_airport_code,
+                       arrived_at, 
+                       trip_eta,
+                       external_id,
+                       status,
+                       airline_code,
+                       airline_display_name,
+                       sequence_flight,
+                       flights_trip_id,
+                       flight_number,
+                       booking_number,
+                       airline_id
+                       )
+            VALUES (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            RETURNING id
+        """,
+        (
+            flight['departure_airport_address_id'],
+            flight['arrived_airport_address_id'],
+            flight['departure_airport_name'],
+            flight['departure_airport_code'],
+            flight['departure_at'],
+            flight['arrived_airport_name'],
+            flight['arrived_airport_code'],
+            flight['arrived_at'],
+            flight['trip_eta'],
+            flight['external_id'],
+            flight['status'],
+            flight['airline_code'],
+            flight['airline_display_name'],
+            flight['sequence_flight'],
+            flight['flights_trip_id'],
+            flight['flight_number'],
+            flight['booking_number'],
+            flight['airline_id']
+        ))
+
+        flight_id = cursor.fetchone()[0]
+        CONNECTION.commit()
+        return flight_id
+
+    except Exception as e:
+        if CONNECTION:
+            CONNECTION.rollback()
+        print("Erro ao inserir flight:", e)
+    finally:
+        if cursor:
+            cursor.close()
 
 def insert_flight_trip(flight_trip):
     cursor = None
     try:
         cursor = CONNECTION.cursor()
         cursor.execute("""
-            INSERT INTO flight_trips (id, direction, departure_at, arrived_at, trip_id)
-            VALUES (default, %s, %s, %s, %s, %s)
+            INSERT INTO flights_trip (id, direction, departure_at, arrived_at, trip_id)
+            VALUES (default, %s, %s, %s, %s)
             RETURNING id
         """,
         (
@@ -47,6 +112,8 @@ def insert_flight_trip(flight_trip):
     except Exception as e:
         if CONNECTION:
             CONNECTION.rollback()
+
+        print("Erro ao inserir flight_trip:", e)
     finally:
         if cursor:
             cursor.close()
@@ -74,6 +141,7 @@ def insert_expense(expense):
     except Exception as e:
         if CONNECTION:
             CONNECTION.rollback()
+        print(f"Erro ao inserir expense: {e}")
     finally:
         if cursor:
             cursor.close()
@@ -101,7 +169,7 @@ def insert_expense_trip(expense_trip):
     except Exception as e:
         if CONNECTION:
             CONNECTION.rollback()
-        print(f"Erro ao inserir expense: {e}")
+        print(f"Erro ao inserir expense_trip: {e}")
         return None
 
     finally:
@@ -109,7 +177,6 @@ def insert_expense_trip(expense_trip):
             cursor.close()
 
 def insert_hotel_trip(hotel_trip):
-    print(hotel_trip)
     cursor = None
     try:
         cursor = CONNECTION.cursor()
@@ -183,4 +250,4 @@ def get_address(address):
     if result:
         return result[0]
     
-    return ""
+    return

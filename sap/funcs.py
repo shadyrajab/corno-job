@@ -159,7 +159,7 @@ class SAP:
                 del voos['__metadata']
 
                 flight = {
-                    "direction": "",
+                    "direction": "IDA",
                     "departure_at": self.stract_date(voos["OrigemData"]),
                     "arrived_at": self.stract_date(voos["DestinoData"]),
                     "trip_id": "",
@@ -171,19 +171,20 @@ class SAP:
                         "departure_airport_code": voos["OrigemCidadeAeroporto"],
                         "departure_at": self.stract_date(voos["OrigemData"]),
 
+                        "trip_eta": None,
+
                         "arrived_airport_name": voos["DestinoNomeAeroporto"],
                         "arrived_airport_code": voos["DestinoCidadeAeroporto"],
                         "arrived_at": self.stract_date(voos["DestinoData"]),
-                        "trip_eta": "",
                         "external_id": external_id,
                         "status": voos["Situacao"],
                         "airline_code": voos["EmpresaAerea"],
                         "airline_display_name": voos["EmpresaAereaOferente"],
-                        "sequence_flight": "",
-                        "fligh_trips_id": "",
+                        "sequence_flight": None,
+                        "flights_trip_id": "",
                         "flight_number": voos["NumVoo"],
-                        "booking_number": "",
-                        "airline_id": "",
+                        "booking_number": None,
+                        "airline_id": 1,
                     }
                 }
 
