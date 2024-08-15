@@ -52,7 +52,7 @@ class SAP:
                     "start_at": start_at_dt.strftime('%Y-%m-%d %H:%M:%S'),
                     "end_at": end_at_dt.strftime('%Y-%m-%d %H:%M:%S'),
                     "status": status_map.get(trip["Status"]),
-                    "reason": trip["MotivoViagem"],
+                    "reason": trip["Motivo"],
                     "external_id": trip['NumViagem'],
                     "amount": trip["PrecoTotalPassagem"],
                     "player_user_id": player_user_id,
