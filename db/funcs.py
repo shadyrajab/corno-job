@@ -1,17 +1,23 @@
-from .conn import CONNECTION
+from .conn import PLAYERS_CONNECTION, ADMIN_CONNECTION
 
+
+def get_user_name(user_id):
+    cursor = ADMIN_CONNECTION.cursor()
+    cursor.execute('SELECT "name" FROM "User" WHERE "id" = %s', (user_id,))
+    return cursor.fetchone()[0]
 
 def get_player_users_ids(external_id, player_company_id):
-    cursor = CONNECTION.cursor()
+    cursor = PLAYERS_CONNECTION.cursor()
     cursor.execute(
-        "SELECT id FROM player_users where external_id = %s and player_company_id = %s",
+        "SELECT id, user_id FROM player_users where external_id = %s and player_company_id = %s",
         (external_id, player_company_id),
     )
-    return cursor.fetchone()[0]
+    return cursor.fetchone()
+
 
 
 def get_check_external_id(num_viagem):
-    cursor = CONNECTION.cursor()
+    cursor = PLAYERS_CONNECTION.cursor()
     cursor.execute("SELECT external_id FROM trip WHERE external_id = %s", (num_viagem,))
     result = cursor.fetchone()
     if result:
@@ -21,7 +27,7 @@ def get_check_external_id(num_viagem):
 def insert_hotel(hotel):
     cursor = None
     try:
-        cursor = CONNECTION.cursor()
+        cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
             INSERT INTO hotels (
@@ -39,12 +45,12 @@ def insert_hotel(hotel):
         )
 
         hotel = cursor.fetchone()[0]
-        CONNECTION.commit()
+        PLAYERS_CONNECTION.commit()
         return hotel
 
     except Exception as e:
-        if CONNECTION:
-            CONNECTION.rollback()
+        if PLAYERS_CONNECTION:
+            PLAYERS_CONNECTION.rollback()
         print("Erro ao inserir hotel:", e)
     finally:
         if cursor:
@@ -54,7 +60,7 @@ def insert_hotel(hotel):
 def insert_flight(flight):
     cursor = None
     try:
-        cursor = CONNECTION.cursor()
+        cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
             INSERT INTO flights (
@@ -104,12 +110,12 @@ def insert_flight(flight):
         )
 
         flight_id = cursor.fetchone()[0]
-        CONNECTION.commit()
+        PLAYERS_CONNECTION.commit()
         return flight_id
 
     except Exception as e:
-        if CONNECTION:
-            CONNECTION.rollback()
+        if PLAYERS_CONNECTION:
+            PLAYERS_CONNECTION.rollback()
         print("Erro ao inserir flight:", e)
     finally:
         if cursor:
@@ -119,7 +125,7 @@ def insert_flight(flight):
 def insert_flight_trip(flight_trip):
     cursor = None
     try:
-        cursor = CONNECTION.cursor()
+        cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
             INSERT INTO flights_trip (id, direction, departure_at, arrived_at, trip_id)
@@ -135,12 +141,12 @@ def insert_flight_trip(flight_trip):
         )
 
         flight_trip_id = cursor.fetchone()[0]
-        CONNECTION.commit()
+        PLAYERS_CONNECTION.commit()
         return flight_trip_id
 
     except Exception as e:
-        if CONNECTION:
-            CONNECTION.rollback()
+        if PLAYERS_CONNECTION:
+            PLAYERS_CONNECTION.rollback()
 
         print("Erro ao inserir flight_trip:", e)
     finally:
@@ -151,11 +157,11 @@ def insert_flight_trip(flight_trip):
 def insert_expense(expense):
     cursor = None
     try:
-        cursor = CONNECTION.cursor()
+        cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
             INSERT INTO expenses (id, expenses_trip_id, currency_code, code, description)
-            VALUES (default, %s, %s, %s)
+            VALUES (default, %s, %s, %s, %s)
             RETURNING id
         """,
             (
@@ -168,11 +174,11 @@ def insert_expense(expense):
         )
 
         expense_id = cursor.fetchone()[0]
-        CONNECTION.commit()
+        PLAYERS_CONNECTION.commit()
         return expense_id
     except Exception as e:
-        if CONNECTION:
-            CONNECTION.rollback()
+        if PLAYERS_CONNECTION:
+            PLAYERS_CONNECTION.rollback()
         print(f"Erro ao inserir expense: {e}")
     finally:
         if cursor:
@@ -182,7 +188,7 @@ def insert_expense(expense):
 def insert_expense_trip(expense_trip):
     cursor = None
     try:
-        cursor = CONNECTION.cursor()
+        cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
             INSERT INTO expenses_trip (id, total, refund_at, currency_code, trip_id)
@@ -198,11 +204,11 @@ def insert_expense_trip(expense_trip):
         )
 
         expense_id = cursor.fetchone()[0]
-        CONNECTION.commit()
+        PLAYERS_CONNECTION.commit()
         return expense_id
     except Exception as e:
-        if CONNECTION:
-            CONNECTION.rollback()
+        if PLAYERS_CONNECTION:
+            PLAYERS_CONNECTION.rollback()
         print(f"Erro ao inserir expense_trip: {e}")
         return None
 
@@ -214,7 +220,7 @@ def insert_expense_trip(expense_trip):
 def insert_hotel_trip(hotel_trip):
     cursor = None
     try:
-        cursor = CONNECTION.cursor()
+        cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
             INSERT INTO hotels_trip (id, checkin_at, checkout_at, amount, currency_code, trip_id)
@@ -231,11 +237,11 @@ def insert_hotel_trip(hotel_trip):
         )
 
         hotel_id = cursor.fetchone()[0]
-        CONNECTION.commit()
+        PLAYERS_CONNECTION.commit()
         return hotel_id
     except Exception as e:
-        if CONNECTION:
-            CONNECTION.rollback()
+        if PLAYERS_CONNECTION:
+            PLAYERS_CONNECTION.rollback()
         print(f"Erro ao inserir hotel: {e}")
         return None
 
@@ -247,7 +253,7 @@ def insert_hotel_trip(hotel_trip):
 def insert_trip(trip):
     cursor = None
     try:
-        cursor = CONNECTION.cursor()
+        cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
             INSERT INTO trip (id, start_at, end_at, status, reason, amount, currency_code, player_user_id, external_id) 
@@ -268,13 +274,13 @@ def insert_trip(trip):
 
         trip_id = cursor.fetchone()[0]
 
-        CONNECTION.commit()
+        PLAYERS_CONNECTION.commit()
 
         return trip_id
 
     except Exception as e:
-        if CONNECTION:
-            CONNECTION.rollback()
+        if PLAYERS_CONNECTION:
+            PLAYERS_CONNECTION.rollback()
         print(f"Erro ao inserir trip: {e}")
         return None
 
@@ -284,7 +290,7 @@ def insert_trip(trip):
 
 
 def get_address(address):
-    cursor = CONNECTION.cursor()
+    cursor = PLAYERS_CONNECTION.cursor()
     cursor.execute("SELECT id FROM addresses where address ILIKE(%s)", (address,))
     result = cursor.fetchone()
     if result:
