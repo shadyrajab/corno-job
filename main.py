@@ -1,4 +1,4 @@
-from db.funcs import get_player_users_ids, insert_trip, insert_hotel_trip, insert_expense, insert_expense_trip, insert_flight_trip, insert_flight
+from db.funcs import get_player_users_ids, insert_trip, insert_hotel_trip, insert_expense, insert_expense_trip, insert_flight_trip, insert_flight, get_check_external_id
 from utils.vars import USERS
 from sap.funcs import SAP
 
@@ -10,6 +10,11 @@ for name, external_id in USERS.items():
     full_trip = sap.get_full_trip(name, external_id, player_user_id)
     for trip in full_trip['trips']:
         trip_id = insert_trip(trip)
+        
+        if get_check_external_id(trip['external_id']):
+            print(f"já existe uma viagem com esse ID")
+            continue
+
         hoteis = trip['hoteis']
         expenses_trip = trip['custos_viagem']
 

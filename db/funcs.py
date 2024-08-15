@@ -5,27 +5,13 @@ def get_player_users_ids(external_id, player_company_id):
     cursor.execute("SELECT id FROM player_users where external_id = %s and player_company_id = %s", (external_id, player_company_id))
     return cursor.fetchone()[0]
 
+def get_check_external_id(num_viagem):
+    cursor = CONNECTION.cursor()
+    cursor.execute("SELECT external_id FROM trip WHERE external_id = %s", (num_viagem,))
+    result = cursor.fetchone()
 
-# "flight": {
-#             "departure_airport_address_id": "",
-#             "arrived_airport_address_id": "",
-#             "departure_airport_name": "Congonhas",
-#             "departure_airport_code": "CGH",
-#             "departure_at": "2024-08-16 00:00:00",
-#             "arrived_airport_name": "Guararapes Intl",
-#             "arrived_airport_code": "REC",
-#             "arrived_at": "2024-08-16 00:00:00",
-#             "trip_eta": "",
-#             "external_id": "09823125",
-#             "status": "FRS Gerada",
-#             "airline_code": "AD",
-#             "airline_display_name": "Azul Linhas A\u00e9reas Brasileiras",
-#             "sequence_flight": "",
-#             "flight_trips_id": "",
-#             "flight_number": "4243",
-#             "booking_number": "",
-#             "airline_id": ""
-#           }
+    if result:
+        return True
 
 def insert_flight(flight):
     cursor = None
