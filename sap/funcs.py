@@ -1,7 +1,7 @@
 import requests 
 from utils.vars import BODY, BASE_URL
 import json
-from db.funcs import get_address
+from db.funcs import get_address, get_user_name
 from datetime import datetime, timezone
 import re
 
@@ -24,7 +24,7 @@ class SAP:
     def get_url(self, trip, name):
        return BASE_URL + "/YSTV_APV_ROT_VIAG_SRV/Viagens" + trip[name]['__deferred']['uri'].split("/Viagens")[1]
     
-    def get_full_trip(self, name, external_id, player_user_id):
+    def get_full_trip(self, name, external_id, player_user_id, user_id):
         full_trips = {
             "trips": [],
         }
@@ -39,10 +39,10 @@ class SAP:
             for trip in results:
                 del trip['__metadata']
 
-                hoteis = self.get_hoteis(self.get_url(trip, 'Hoteis'), external_id)
+                hoteis = self.get_hoteis(self.get_url(trip, 'Hoteis'), external_id, user_id)
                 adiantamentos = self.get_adiantamentos(self.get_url(trip, 'Adiantamentos'))
                 custos_viagem = self.get_custos_viagem(self.get_url(trip, 'CustosViagem'), adiantamentos)
-                voos = self.get_voos(self.get_url(trip, 'Voos'), external_id)
+                voos = self.get_voos(self.get_url(trip, 'Voos'), external_id, user_id)
 
                 start_at, end_at = trip['Periodo'].split("Até")
                 start_at_dt = datetime.strptime(start_at.strip(), '%d.%m.%Y')
@@ -79,7 +79,7 @@ class SAP:
         return date_time.strftime('%Y-%m-%d %H:%M:%S')
 
 
-    def get_hoteis(self, hoteis_url, external_id):
+    def get_hoteis(self, hoteis_url, external_id, user_id):
         hotels = []
         response = requests.get(hoteis_url, headers=self.headers)
         content = response.content.decode('utf-8')
@@ -91,6 +91,8 @@ class SAP:
             for hotel in results:
                 del hotel['__metadata']
 
+                guest_name = get_user_name(user_id) if external_id == hotel['Matricula'] else None
+
                 hotel = {
                     "external_id": None,
                     "name": hotel["Nome"],
@@ -100,7 +102,8 @@ class SAP:
                         "checkout_at": self.stract_date(hotel["DataSaida"]),
                         "amount": hotel["PrecoTotal"],
                         "currency_code": hotel["Moeda"],
-                        "trip_id": ""
+                        "trip_id": "",
+                        "guest_name": guest_name
                     }
                 }
 
@@ -147,16 +150,17 @@ class SAP:
         
         return expenses
 
-    def get_voos(self, voos_url, external_id):
+    def get_voos(self, voos_url, external_id, user_id):
         flights = []
         response = requests.get(voos_url, headers=self.headers)
         content = response.content.decode('utf-8')
         response = json.loads(content)
         results = response['d']['results']
-
         if results:
             for voos in results:
                 del voos['__metadata']
+
+                passenger_name = get_user_name(user_id) if external_id == voos['Matricula'] else None
 
                 flight = {
                     "direction": "IDA",
@@ -185,6 +189,7 @@ class SAP:
                         "flight_number": voos["NumVoo"],
                         "booking_number": None,
                         "airline_id": 1,
+                        "passenger_name": passenger_name
                     }
                 }
 
