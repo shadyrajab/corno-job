@@ -82,9 +82,10 @@ def insert_flight(flight):
                        flights_trip_id,
                        flight_number,
                        booking_number,
-                       airline_id
+                       airline_id,
+                       passenger_name
                        )
-            VALUES (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            VALUES (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             RETURNING id
         """,
             (
@@ -106,6 +107,7 @@ def insert_flight(flight):
                 flight["flight_number"],
                 flight["booking_number"],
                 flight["airline_id"],
+                flight["passenger_name"]
             ),
         )
 
@@ -160,8 +162,8 @@ def insert_expense(expense):
         cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
-            INSERT INTO expenses (id, expenses_trip_id, currency_code, code, description)
-            VALUES (default, %s, %s, %s, %s)
+            INSERT INTO expenses (id, expenses_trip_id, total, currency_code, code, description)
+            VALUES (default, %s, %s, %s, %s, %s)
             RETURNING id
         """,
             (
@@ -223,8 +225,8 @@ def insert_hotel_trip(hotel_trip):
         cursor = PLAYERS_CONNECTION.cursor()
         cursor.execute(
             """
-            INSERT INTO hotels_trip (id, checkin_at, checkout_at, amount, currency_code, trip_id)
-            VALUES (default, %s, %s, %s, %s, %s)
+            INSERT INTO hotels_trip (id, checkin_at, checkout_at, amount, currency_code, trip_id, guest_name)
+            VALUES (default, %s, %s, %s, %s, %s, %s)
             RETURNING id
         """,
             (
@@ -233,6 +235,7 @@ def insert_hotel_trip(hotel_trip):
                 int(float(hotel_trip["amount"])),
                 hotel_trip["currency_code"],
                 hotel_trip["trip_id"],
+                hotel_trip["guest_name"],
             ),
         )
 
