@@ -19,11 +19,11 @@ for name, external_id in USERS.items():
     player_user_id = get_player_users_ids(external_id, 147)
     full_trip = sap.get_full_trip(name, external_id, player_user_id)
     for trip in full_trip["trips"]:
-        trip_id = insert_trip(trip)
-
         if get_check_external_id(trip["external_id"]):
             print(f"já existe uma viagem com esse ID")
             continue
+
+        trip_id = insert_trip(trip)
 
         hoteis = trip["hoteis"]
         expenses_trip = trip["custos_viagem"]
