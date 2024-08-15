@@ -16,8 +16,8 @@ from sap.funcs import SAP
 sap = SAP()
 
 for name, external_id in USERS.items():
-    player_user_id = get_player_users_ids(external_id, 147)
-    full_trip = sap.get_full_trip(name, external_id, player_user_id)
+    player_user_id, user_id = get_player_users_ids(external_id, 147)
+    full_trip = sap.get_full_trip(name, external_id, player_user_id, user_id)
     for trip in full_trip["trips"]:
         if get_check_external_id(trip["external_id"]):
             print(f"já existe uma viagem com esse ID")
@@ -36,17 +36,17 @@ for name, external_id in USERS.items():
             hotel_trip_id = insert_hotel_trip(hotels_trip)
             print("Hotel Trip ID:", hotel_trip_id)
 
-        # for expense_trip in expenses_trip:
-        #     expense_trip['trip_id'] = trip_id
-        #     expense_trip_id = insert_expense_trip(expense_trip)
-        #     print('Expense Trip ID:', expense_trip_id)
-        #     expenses = expense_trip['expenses']
-        #     for expense in expenses:
-        #         expense['expenses_trip_id'] = expense_trip_id
+        for expense_trip in expenses_trip:
+            expense_trip['trip_id'] = trip_id
+            expense_trip_id = insert_expense_trip(expense_trip)
+            print('Expense Trip ID:', expense_trip_id)
+            expenses = expense_trip['expenses']
+            for expense in expenses:
+                expense['expenses_trip_id'] = expense_trip_id
 
-        #         expense_id = insert_expense(expense)
+                expense_id = insert_expense(expense)
 
-        #         print('Expense ID:', expense_id)
+                print('Expense ID:', expense_id)
 
         for flight_trip in trip["voos"]:
             flight_trip["trip_id"] = trip_id
