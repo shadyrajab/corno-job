@@ -92,9 +92,9 @@ class SAP:
                 del hotel['__metadata']
 
                 hotel = {
-                    "external_id": external_id,
+                    "external_id": None,
                     "name": hotel["Nome"],
-                    "address_id": get_address(hotel["Endereco"]),
+                    "address_id": 0,
                     "hotels_trip": {
                         "checkin_at": self.stract_date(hotel["DataChegada"]),
                         "checkout_at": self.stract_date(hotel["DataSaida"]),
